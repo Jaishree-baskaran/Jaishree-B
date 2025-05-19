@@ -475,6 +475,7 @@ body::after {
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#Certifications">Certifications</a></li>
         <li><a href="#Works">Works</a></li>
+        <li><a href="#Works">Volunteering</a></li>
         <li><a href="#pit-lane">Pit Lane</a></li>
       </ul>
     </nav>
@@ -585,7 +586,55 @@ body::after {
         --red: #ff0000;
         --background-dark: #111;
       }
+/* === F1 Volunteering Section === */
+.f1-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 4px dashed red;
+  margin-top: 2rem;
+}
 
+.f1-card {
+  display: flex;
+  gap: 1rem;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  border-left: 5px solid #ff0000;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+  position: relative;
+}
+
+.f1-icon {
+  font-size: 2rem;
+  margin-top: 0.3rem;
+}
+
+.f1-details h3 {
+  font-size: 1.2rem;
+  color: #ff3c00;
+  margin: 0;
+}
+
+.f1-details span {
+  font-weight: normal;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.badge {
+  background: #ff3c00;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
       * {
         margin: 0;
         padding: 0;
@@ -771,12 +820,6 @@ body::after {
           <p>
             Developed a GUI for actuator data, gaining insights into functionality and
             operations.
-          </p>
-        </div>
-        <div class="timeline-item">
-          <h3>To-Let Globe Internship</h3>
-          <p>
-            Produced blogs and marketing content to enhance the company’s online presence.
           </p>
         </div>
         <div class="timeline-item">
@@ -1062,7 +1105,42 @@ body::after {
   </body>
 </html>
 
-    
+<!-- VOLUNTEERING SECTION -->
+<section id="volunteering" class="section volunteering">
+  <h2>🏁 Volunteering Pit Stops</h2>
+  <div class="f1-timeline">
+    <div class="f1-card">
+      <div class="f1-icon">🏎️</div>
+      <div class="f1-details">
+        <h3>Chinmaya Mission <span>Sep 2014 – Sep 2019</span></h3>
+        <p><strong>Role:</strong> Student Volunteer</p>
+        <p>Volunteered weekly to distribute food at orphanages and old age homes while immersing in Indian culture. 
+        Also participated in theatre productions and dance performances, enhancing teamwork and creative expression.</p>
+      </div>
+    </div>
+
+    <div class="f1-card">
+      <div class="f1-icon">🚩</div>
+      <div class="f1-details">
+        <h3>Narpani Foundation <span>— 2024</span></h3>
+        <p><strong>Role:</strong>Community Volunteer </p>
+        <p>My colleagues and I did this for an exposure during our summer vacation. 
+        we raised awareness about road and animal safety...we also cleaned a lot of public places like parks.</p>
+      </div>
+    </div>
+
+       <div class="f1-card">
+      <div class="f1-icon">🚩</div>
+      <div class="f1-details">
+        <h3>Muskurahat Foundation <span>— 2024</span></h3>
+        <p><strong>Role:</strong>Fundraiser</p>
+        <p>Raised fund for children's education through social media</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     <!-- Pit Tools Section: Works / Online Profiles -->
     <section id="Works" class="section works">
       <h2>Works</h2>
