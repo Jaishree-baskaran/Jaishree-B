@@ -581,152 +581,122 @@ body::after {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <!-- SKILLS CSS -->
-  <style>
-    :root {
-      --black: #111;
-      --white: #fff;
-      --red: #ff2e2e;
-      --gray: #333;
-    }
+<style>
+  :root {
+    --black: #111;
+    --white: #fff;
+    --red: #ff2e2e;
+    --gray: #333;
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--black);
-      color: var(--white);
-      padding: 2rem;
-    }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 2rem;
+  }
 
-    h2 {
-      text-align: center;
-      color: var(--red);
-      margin-bottom: 2rem;
-      font-size: 2rem;
-    }
+  h2 {
+    text-align: center;
+    color: var(--red);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
 
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
 
-    .tab-button {
-      background-color: var(--gray);
-      color: var(--white);
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+  .tab-button {
+    background-color: var(--gray);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-    .tab-button.active,
-    .tab-button:hover {
-      background-color: var(--red);
-    }
+  .tab-button.active,
+  .tab-button:hover {
+    background-color: var(--red);
+  }
 
-    .tab-content {
-      display: none;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
+  .tab-content {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
 
-    .tab-content.active {
-      display: flex;
-    }
+  .tab-content.active {
+    display: flex;
+  }
 
-    .skill-ring {
-      position: relative;
-      width: 120px;
-      height: 120px;
-    }
+  .skill-ring {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+  }
 
-    .skill-ring svg {
-      transform: rotate(-90deg);
-    }
+  .skill-ring svg {
+    transform: rotate(-90deg);
+  }
 
-    .skill-ring circle {
-      fill: none;
-      stroke-width: 10;
-    }
+  .skill-ring circle {
+    fill: none;
+    stroke-width: 10;
+  }
 
-    .skill-ring .bg {
-      stroke: #333;
-    }
+  .skill-ring .bg {
+    stroke: #333;
+  }
 
-    .skill-ring .progress {
-      stroke: var(--red);
-      stroke-linecap: round;
-      transition: stroke-dashoffset 1s ease;
-    }
+  .skill-ring .progress {
+    stroke: var(--red);
+    stroke-linecap: round;
+    stroke-width: 6;
+    transition: stroke-dashoffset 1s ease;
+  }
 
-    .skill-ring .icon,
-    .skill-ring img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-      border-radius: 50%;
-    }
+  .skill-ring .progress.full {
+    stroke: var(--red);
+    stroke-dasharray: 314;
+    stroke-dashoffset: 0;
+  }
 
-    .skill-ring .percent-text {
-      position: absolute;
-      bottom: -25px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-      .skill-ring {
-  position: relative;
-  display: inline-block;
-  margin: 20px;
-  text-align: center;
-  color: #fff;
-  width: 120px;
-}
+  .skill-ring .icon,
+  .skill-ring img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.6));
+  }
 
-.skill-ring svg {
-  transform: rotate(-90deg);
-}
+  .skill-ring .percent-text {
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+</style>
 
-.skill-ring .bg {
-  fill: none;
-  stroke: #333;
-  stroke-width: 6;
-}
-
-.skill-ring .progress.full {
-  fill: none;
-  stroke: #ff0000; /* red for now */
-  stroke-width: 6;
-  stroke-dasharray: 314;
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1s ease;
-}
-
-.skill-ring img,
-.skill-ring i {
-  width: 36px;
-  height: 36px;
-  margin: -72px auto 10px;
-  display: block;
-  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.6));
-}
-
-.skill-ring .percent-text {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: #fff;
-}
-
-  </style>
 </head>
 <body>
                 <!-- F1-Themed Skills Section -->
@@ -797,118 +767,27 @@ body::after {
   </div>
 
   <!-- DESIGN SKILLS -->
-<div id="design" class="tab-content design-tab">
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <img src="assets/figma.jpeg" alt="Figma" />
-    <div class="percent-text">Figma</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <img src="assets/ps.jpeg" alt="Photoshop" />
-    <div class="percent-text">Photoshop</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <img src="assets/Notion.jpeg" alt="Notion" />
-    <div class="percent-text">Notion</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <img src="assets/canva.jpeg" alt="Canva" />
-    <div class="percent-text">Canva</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <img src="assets/AI.jpeg" alt="Illustrator" />
-    <div class="percent-text">Illustrator</div>
-  </div>
+<!-- DESIGN SKILLS -->
+<div id="design" class="tab-content">
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><img src="assets/figma.jpeg" alt="Figma" /><div class="percent-text">Figma</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><img src="assets/ps.jpeg" alt="Photoshop" /><div class="percent-text">Photoshop</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><img src="assets/Notion.jpeg" alt="Notion" /><div class="percent-text">Notion</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><img src="assets/canva.jpeg" alt="Canva" /><div class="percent-text">Canva</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><img src="assets/AI.jpeg" alt="Illustrator" /><div class="percent-text">Illustrator</div></div>
 </div>
 
 <!-- SOFT SKILLS -->
-<div id="soft" class="tab-content soft-tab">
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <i class="fas fa-comments icon"></i>
-    <div class="percent-text">Communication</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <i class="fas fa-user-tie icon"></i>
-    <div class="percent-text">Leadership</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <i class="fas fa-users icon"></i>
-    <div class="percent-text">Teamwork</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <i class="fas fa-microphone icon"></i>
-    <div class="percent-text">Event Compering</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <i class="fas fa-sync-alt icon"></i>
-    <div class="percent-text">Adaptability</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <i class="fas fa-lightbulb icon"></i>
-    <div class="percent-text">Creativity</div>
-  </div>
-
-  <div class="skill-ring" data-percent="100">
-    <svg width="120" height="120">
-      <circle class="bg" cx="60" cy="60" r="50"/>
-      <circle class="progress full" cx="60" cy="60" r="50"/>
-    </svg>
-    <i class="fas fa-brain icon"></i>
-    <div class="percent-text">Problem Solving</div>
-  </div>
+<!-- SOFT SKILLS -->
+<div id="soft" class="tab-content">
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><i class="fas fa-comments icon"></i><div class="percent-text">Communication</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><i class="fas fa-user-tie icon"></i><div class="percent-text">Leadership</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><i class="fas fa-users icon"></i><div class="percent-text">Teamwork</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><i class="fas fa-microphone icon"></i><div class="percent-text">Event Compering</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><i class="fas fa-sync-alt icon"></i><div class="percent-text">Adaptability</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><i class="fas fa-lightbulb icon"></i><div class="percent-text">Creativity</div></div>
+  <div class="skill-ring" data-percent="100"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress full" cx="60" cy="60" r="50"/></svg><i class="fas fa-brain icon"></i><div class="percent-text">Problem Solving</div></div>
 </div>
+
 
 
   <!-- 🔁 JavaScript -->
@@ -1264,59 +1143,40 @@ body::after {
 </html>
             
 <!-- VOLUNTEERING CSS -->   
-<style>
-.volunteering h2 {
-  text-align: left;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #ff0000;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding-left: 20px;
-}
-
-.f1-timeline {
-  position: relative;
-  padding-left: 40px;
-  border-left: 4px dashed #ff0000;
-  max-width: 100%;
-  margin-left: 0;
+<style>.f1-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .f1-card {
-  position: relative;
-  margin-bottom: 40px;
-  padding-left: 20px;
-  animation: fadeInUp 1s ease-in-out both;
-  width: 100%;
+  background-color: #1a1a1a;
+  border-left: 4px solid var(--red);
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
-.f1-card::before {
-  content: "🏁";
-  position: absolute;
-  left: -28px;
-  top: 0;
-  font-size: 20px;
+.f1-details {
+  text-align: left; /* 👈🏽 This fixes your main issue */
 }
 
 .f1-details h3 {
-  font-size: 1.3rem;
-  margin: 0 0 6px;
-  color: #fff;
-}
-
-.f1-details h3 span {
-  font-size: 0.85rem;
-  color: #ff5e5e;
-  display: block;
-  margin-top: 4px;
+  margin: 0;
+  color: var(--red);
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .f1-details p {
-  font-size: 0.95rem;
-  margin: 4px 0;
+  margin: 0.4rem 0;
   line-height: 1.5;
-  color: #ddd;
+  font-size: 0.95rem;
 }
 </style>
             
@@ -1324,36 +1184,29 @@ body::after {
 <section id="volunteering" class="section volunteering">
   <h2>Volunteering Pit Stops</h2>
   <div class="f1-timeline">
-
     <div class="f1-card">
       <div class="f1-details">
-        <h3>Chinmaya Mission <span>LAP: Sep 2014 – Sep 2019</span></h3>
+        <h3>Chinmaya Mission <span>Sep 2014 – Sep 2019</span></h3>
         <p><strong>Role:</strong> Student Volunteer</p>
-        <p>Volunteered weekly to distribute food at orphanages and old age homes while immersing in Indian culture. 
-        Also participated in theatre productions and dance performances, enhancing teamwork and creative expression.</p>
+        <p>Volunteered weekly to distribute food at orphanages and old age homes while immersing in Indian culture. Also participated in theatre productions and dance performances, enhancing teamwork and creative expression.</p>
       </div>
     </div>
-
     <div class="f1-card">
       <div class="f1-details">
-        <h3>Narpani Foundation <span>LAP: June 2024 — June 2024</span></h3>
+        <h3>Narpani Foundation <span>June 2024 — June 2024</span></h3>
         <p><strong>Role:</strong> Community Volunteer</p>
-        <p>My colleagues and I did this for exposure during our summer vacation. We raised awareness about road and animal safety, and also cleaned public places like parks.</p>
+        <p>My colleagues and I did this for exposure during our summer vacation. We raised awareness about road and animal safety and cleaned public places like parks.</p>
       </div>
     </div>
-
     <div class="f1-card">
       <div class="f1-details">
-        <h3>Muskurahat Foundation <span>LAP: June 2024 — June 2024</span></h3>
+        <h3>Muskurahat Foundation <span>June 2024 — June 2024</span></h3>
         <p><strong>Role:</strong> Fundraiser</p>
-        <p>Raised funds for children's education through social media.</p>
+        <p>Raised funds for children's education through social media outreach.</p>
       </div>
     </div>
-
   </div>
 </section>
-
-
 
     <!-- Pit Tools Section: Works / Online Profiles -->
     <section id="Works" class="section works">
