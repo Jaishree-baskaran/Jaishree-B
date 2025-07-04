@@ -570,249 +570,194 @@ body::after {
     <body>
         <div class="container">
           <!-- F1-Themed Skills Section -->
-          <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jaishree Baskaran | Skills Matrix</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-              <style>
-                      :root {
-        --black: #000;
-        --white: #fff;
-        --red: #ff0000;
-        --background-dark: #111;
-      }
-/* === F1 Volunteering Section === */
-.f1-timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;      /* Align timeline to left */
-  position: relative;
-  padding-left: 2rem;
-  border-left: 4px dashed red; /* Timeline bar on left */
-  margin-top: 2rem;
-  gap: 1.5rem;                 /* Space between cards */
-}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaishree | Skills Matrix</title>
 
-.f1-card {
-  display: flex;
-  gap: 1rem;
-  background: #1a1a1a;
-  color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 1rem;
-  border-left: 5px solid #ff0000;
-  box-shadow: none;            /* Remove glow */
-  position: relative;
-  max-width: 600px;
-  text-align: left;
-}
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-.f1-icon {
-  font-size: 2rem;
-  margin-top: 0.3rem;
-}
+  <!-- SKILLS CSS -->
+  <style>
+    :root {
+      --black: #111;
+      --white: #fff;
+      --red: #ff2e2e;
+      --gray: #333;
+    }
 
-.f1-details h3 {
-  font-size: 1.2rem;
-  color: #ff3c00;
-  margin: 0;
-}
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+      padding: 2rem;
+    }
 
-.f1-details span {
-  font-weight: normal;
-  font-size: 0.95rem;
-  color: #ccc;
-}
+    h2 {
+      text-align: center;
+      color: var(--red);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
 
-.badge {
-  background: #ff3c00;
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  display: inline-block;
-  margin-top: 0.5rem;
-}
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
 
+    .tab-button {
+      background-color: var(--gray);
+      color: var(--white);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    .tab-button.active,
+    .tab-button:hover {
+      background-color: var(--red);
+    }
 
-      body {
-        background: var(--black);
-        color: var(--white);
-        font-family: 'Roboto', sans-serif;
-        padding: 20px;
-      }
+    .tab-content {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-     /* In your stylesheet */
-     .timeline-date {
-       @apply text-sm text-red-500 italic mb-2;
-      }
+    .tab-content.active {
+      display: flex;
+    }
 
+    .skill-ring {
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
 
-      /* F1-Themed Skills Section */
-      .skills-section {
-        background: var(--background-dark);
-        border: 2px solid var(--red);
-        padding: 30px;
-        border-radius: 12px;
-        margin-bottom: 60px;
-        box-shadow: 0 0 20px var(--red);
-      }
+    .skill-ring svg {
+      transform: rotate(-90deg);
+    }
 
-      .skills-section h2 {
-        font-size: 2rem;
-        color: var(--white);
-        text-align: center;
-        margin-bottom: 20px;
-      }
+    .skill-ring circle {
+      fill: none;
+      stroke-width: 10;
+    }
 
-      .tabs {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px;
-      }
+    .skill-ring .bg {
+      stroke: #333;
+    }
 
-      .tab-button {
-        padding: 10px 20px;
-        background-color: transparent;
-        border: 2px solid var(--red);
-        color: var(--red);
-        cursor: pointer;
-        font-weight: bold;
-        transition: 0.3s;
-      }
+    .skill-ring .progress {
+      stroke: var(--red);
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s ease;
+    }
 
-      .tab-button.active,
-      .tab-button:hover {
-        background-color: var(--red);
-        color: var(--black);
-      }
+    .skill-ring .icon,
+    .skill-ring img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
 
-      .tab-content {
-        display: none;
-        font-family:'Roboto', sans-serif;
-        background-color: var(--background-dark);
-        padding: 20px;
-        border-radius: 8px;
-        color: var(--white);
-        border: 1px solid var(--red);
-      }
-
-      .tab-content.active {
-        display: block;
-      }
-
-      .terminal-line::before {
-        content: "> ";
-        color: var(--white);
-      }
-
-      @media (max-width: 768px) {
-        .skills-section h2 {
-          font-size: 1.5rem;
-        }
-        .tab-button {
-          font-size: 0.85rem;
-          padding: 8px 12px;
-        }
-      }
-              </style>
-            </head>
-            <body>
-              <div class="container">
+    .skill-ring .percent-text {
+      position: absolute;
+      bottom: -25px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
                 <!-- F1-Themed Skills Section -->
-                <section class="skills-section">
-                  <h2>SKILLS MATRIX</h2>
-                  <div class="tabs">
-                    <button class="tab-button" onclick="showTab('tech', event)">
-                      Technical skills
-                    </button>
-                    <button class="tab-button" onclick="showTab('soft', event)">
-                      Soft Skills
-                    </button>
-                    <button class="tab-button" onclick="showTab('design', event)">
-                      Design Skills
-                    </button>
-                  </div>
-                  <div id="tech" class="tab-content">
-                    <div class="terminal-line">Python</div>
-                    <div class="terminal-line">Java</div>
-                    <div class="terminal-line">SQL</div>
-                    <div class="terminal-line">Matplot Lib</div>
-                    <div class="terminal-line">Pandas</div>
-                    <div class="terminal-line">Power BI</div>
-                    <div class="terminal-line">HTML</div>
-                    <div class="terminal-line">JavaScript</div>
-                    <div class="terminal-line">CSS</div>
-                  </div>
-                  <div id="soft" class="tab-content">
-                    <div class="terminal-line">Communication</div>
-                    <div class="terminal-line">Leadership</div>
-                    <div class="terminal-line">Teamwork</div>
-                    <div class="terminal-line">Event Compering</div>
-                    <div class="terminal-line">Adaptability</div>
-                    <div class="terminal-line">Creativity</div>
-                    <div class="terminal-line">Problem-Solving</div>
-                  </div>
-                  <div id="design" class="tab-content">
-                    <div class="terminal-line">Adobe Photoshop</div>
-                    <div class="terminal-line">Adobe Illustrator</div>
-                    <div class="terminal-line">Figma</div>
-                    <div class="terminal-line">Spline</div>
-                    <div class="terminal-line">Canva</div>
-                    <div class="terminal-line">Notion</div>
-                  </div>
-                </section>
-              </div>
-          
-              <script>
-                function showTab(tabId, event) {
-                  const contents = document.querySelectorAll('.tab-content');
-                  const buttons = document.querySelectorAll('.tab-button');
-          
-                  contents.forEach((content) => content.classList.remove('active'));
-                  buttons.forEach((btn) => btn.classList.remove('active'));
-          
-                  document.getElementById(tabId).classList.add('active');
-                  event.target.classList.add('active');
-                }
-              </script>
-            </body>
-          </html>
-          
-        <script>
-            function showTab(tabId, event) {
-        const contents = document.querySelectorAll('.tab-content');
-        const buttons = document.querySelectorAll('.tab-button');
-        
-        // Remove the "active" class from all content and buttons
-        contents.forEach((content) => content.classList.remove('active'));
-        buttons.forEach((btn) => btn.classList.remove('active'));
+  <h2>SKILLS MATRIX</h2>
 
-        // Add the "active" class to the selected tab content and button
-        document.getElementById(tabId).classList.add('active');
-        event.target.classList.add('active');
-        }
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('tech', event)">Technical</button>
+    <button class="tab-button" onclick="showTab('design', event)">Design</button>
+    <button class="tab-button" onclick="showTab('soft', event)">Soft Skills</button>
+  </div>
 
-        </script>
-      </body>
-    </html> 
+  <!-- TECHNICAL SKILLS -->
+  <div id="tech" class="tab-content active">
+    <div class="skill-ring" data-percent="90"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><i class="fab fa-python icon"></i><div class="percent-text">Python - 90%</div></div>
+    <div class="skill-ring" data-percent="60"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><i class="fab fa-java icon"></i><div class="percent-text">Java - 60%</div></div>
+    <div class="skill-ring" data-percent="90"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><i class="fas fa-database icon"></i><div class="percent-text">SQL - 90%</div></div>
+    <div class="skill-ring" data-percent="95"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><img src="assets/matplotlib.png" alt="Matplotlib"/><div class="percent-text">Matplotlib - 95%</div></div>
+    <div class="skill-ring" data-percent="90"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><img src="assets/pandas.png" alt="Pandas"/><div class="percent-text">Pandas - 90%</div></div>
+    <div class="skill-ring" data-percent="70"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><img src="assets/powerbi.png" alt="Power BI"/><div class="percent-text">Power BI - 70%</div></div>
+    <div class="skill-ring" data-percent="95"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><i class="fab fa-html5 icon"></i><div class="percent-text">HTML - 95%</div></div>
+    <div class="skill-ring" data-percent="95"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><i class="fab fa-css3-alt icon"></i><div class="percent-text">CSS - 95%</div></div>
+    <div class="skill-ring" data-percent="75"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="progress" cx="60" cy="60" r="50"/></svg><img src="assets/flutter.png" alt="Flutter"/><div class="percent-text">Flutter - 75%</div></div>
+  </div>
+
+  <!-- DESIGN SKILLS -->
+  <div id="design" class="tab-content">
+    <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fab fa-figma icon"></i><div class="percent-text">Figma</div></div>
+    <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-palette icon"></i><div class="percent-text">Canva</div></div>
+    <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-vector-square icon"></i><div class="percent-text">Illustrator</div></div>
+  </div>
+
+  <!-- SOFT SKILLS -->
+  <div id="soft" class="tab-content">
+    <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-comments icon"></i><div class="percent-text">Communication</div></div>
+    <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-users icon"></i><div class="percent-text">Teamwork</div></div>
+    <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-lightbulb icon"></i><div class="percent-text">Creativity</div></div>
+  </div>
+
+  <!-- 🔁 JavaScript -->
+  <script>
+    function showTab(tabId, event) {
+      const contents = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      contents.forEach(c => c.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+
+      setTimeout(() => animateProgress(), 100);
+    }
+
+    function animateProgress() {
+      const rings = document.querySelectorAll('.tab-content.active .skill-ring[data-percent]');
+      rings.forEach(ring => {
+        const percent = +ring.dataset.percent;
+        const circle = ring.querySelector('.progress');
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+        const offset = circumference - (percent / 100) * circumference;
+
+        circle.style.strokeDasharray = `${circumference}`;
+        circle.style.strokeDashoffset = `${circumference}`;
+        setTimeout(() => {
+          circle.style.strokeDashoffset = offset;
+        }, 100);
+      });
+    }
+
+    window.onload = animateProgress;
+  </script>
+</body>
+</html> 
     <!--Work Experience -->
 <section id="Experience" class="section Experience">
   <h2>Experience</h2>
