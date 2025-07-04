@@ -763,15 +763,16 @@ body::after {
   </div>
 
   <!-- SOFT SKILLS -->
-    <div id="Soft skills" class="tab-content">
-        <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-comments icon"></i><div class="percent-text">Communication</div></div>
-        <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-user-tie icon"></i><div class="percent-text">Leadership</div></div>
-        <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-users icon"></i><div class="percent-text">Teamwork</div></div>
-        <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-microphone icon"></i><div class="percent-text">Event Compering</div></div>
-        <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-sync-alt icon"></i><div class="percent-text">Adaptability</div></div>
-        <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-lightbulb icon"></i><div class="percent-text">Creativity</div></div>
-        <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-brain icon"></i><div class="percent-text">Problem Solving</div></div>
-     </div>
+<div id="soft" class="tab-content">
+  <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-comments icon"></i><div class="percent-text">Communication</div></div>
+  <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-user-tie icon"></i><div class="percent-text">Leadership</div></div>
+  <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-users icon"></i><div class="percent-text">Teamwork</div></div>
+  <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-microphone icon"></i><div class="percent-text">Event Compering</div></div>
+  <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-sync-alt icon"></i><div class="percent-text">Adaptability</div></div>
+  <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-lightbulb icon"></i><div class="percent-text">Creativity</div></div>
+  <div class="skill-ring"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"/></svg><i class="fas fa-brain icon"></i><div class="percent-text">Problem Solving</div></div>
+</div>
+
   <!-- 🔁 JavaScript -->
   <script>
     function showTab(tabId, event) {
@@ -1123,14 +1124,92 @@ body::after {
     </script>
   </body>
 </html>
+            
+    /* ===== Volunteering Timeline Track ===== */
+<style>
+.volunteering {
+  background: #111;
+  color: #fff;
+  padding: 60px 20px;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
 
+.volunteering h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #ff0000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.f1-timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 30px;
+  border-left: 4px dashed #ff0000;
+  max-width: 800px;
+}
+
+.f1-card {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 30px;
+  animation: fadeInUp 1s ease-in-out both;
+}
+
+.f1-card::before {
+  content: "🏁";
+  position: absolute;
+  left: -36px;
+  top: 0;
+  font-size: 24px;
+}
+
+.f1-details h3 {
+  font-size: 1.4rem;
+  margin: 0 0 5px;
+  color: #fff;
+}
+
+.f1-details h3 span {
+  font-size: 0.9rem;
+  color: #ff5e5e;
+  display: block;
+  margin-top: 4px;
+}
+
+.f1-details p {
+  font-size: 1rem;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.f1-details p strong {
+  color: #ffcc00;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+            
 <!-- VOLUNTEERING SECTION -->
 <section id="volunteering" class="section volunteering">
   <h2>Volunteering Pit Stops</h2>
   <div class="f1-timeline">
+
     <div class="f1-card">
       <div class="f1-details">
-        <h3>Chinmaya Mission <span>Sep 2014 – Sep 2019</span></h3>
+        <h3>Chinmaya Mission <span>LAP: Sep 2014 – Sep 2019</span></h3>
         <p><strong>Role:</strong> Student Volunteer</p>
         <p>Volunteered weekly to distribute food at orphanages and old age homes while immersing in Indian culture. 
         Also participated in theatre productions and dance performances, enhancing teamwork and creative expression.</p>
@@ -1139,22 +1218,23 @@ body::after {
 
     <div class="f1-card">
       <div class="f1-details">
-        <h3>Narpani Foundation <span> June 2024 — June 2024</span></h3>
-        <p><strong>Role:</strong>Community Volunteer </p>
-        <p>My colleagues and I did this for an exposure during our summer vacation. 
-        we raised awareness about road and animal safety...we also cleaned a lot of public places like parks.</p>
+        <h3>Narpani Foundation <span>LAP: June 2024 — June 2024</span></h3>
+        <p><strong>Role:</strong> Community Volunteer</p>
+        <p>My colleagues and I did this for exposure during our summer vacation. We raised awareness about road and animal safety, and also cleaned public places like parks.</p>
       </div>
     </div>
 
-       <div class="f1-card">
+    <div class="f1-card">
       <div class="f1-details">
-        <h3>Muskurahat Foundation <span>June 2024 — June 2024</span></h3>
-        <p><strong>Role:</strong>Fundraiser</p>
-        <p>Raised fund for children's education through social media</p>
+        <h3>Muskurahat Foundation <span>LAP: June 2024 — June 2024</span></h3>
+        <p><strong>Role:</strong> Fundraiser</p>
+        <p>Raised funds for children's education through social media.</p>
       </div>
     </div>
+
   </div>
 </section>
+
 
 
     <!-- Pit Tools Section: Works / Online Profiles -->
