@@ -82,7 +82,45 @@
   transition: background 0.3s;
   text-decoration: none;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  background-image: 
+    /* Speed lines (diagonal) */
+    linear-gradient(
+      135deg,
+      #000 25%,
+      transparent 25%,
+      transparent 50%,
+      #000 50%,
+      #000 75%,
+      transparent 75%,
+      transparent
+    ),
+    /* Checkered flag overlay (subtle) */
+    linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    );
+  
+  background-size: 
+    60px 60px, /* Speed lines size */
+    20px 20px,  /* Checkered flag grid */
+    20px 20px;
+  
+  animation: raceMotion 4s linear infinite;
+}
 
+@keyframes raceMotion {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 60px 60px, 20px 20px, 20px 20px; }
+}
 /* for images am doing some shit */
 
       /* General Reset */
@@ -1267,4 +1305,5 @@ across key projects.
     </script>
   </body>
 </html>
+
 
